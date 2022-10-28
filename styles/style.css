@@ -32,6 +32,7 @@ body {
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
 }
 
 .header .container{
@@ -73,8 +74,36 @@ body {
     background-position: center;
     background-size: cover;
     padding: 104px 0 154px 0;
+    
 }
 
+.info{
+    max-width: 50%;
+}
+
+.info-image {
+    max-width: 40%;
+}
+
+.info-image img {
+    max-width: 400px;
+}
+
+.main-title{
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 110%;
+    color: #030305;
+    margin-bottom: 40px;
+}
+
+.main-text{
+    font-size: 16px;
+    line-height: 130%;
+    color: #636060;
+    margin-bottom: 40px;
+    max-width: 502px;
+}
 
 .button {
     white-space: nowrap;
@@ -97,4 +126,8 @@ body {
 .button:hover {
     cursor: pointer;
     background: #575757;
+}
+
+.service{
+    padding: 100px 0;
 }
