@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Robotobold.ttf");
+    font-weight: bold;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.header{
+    border-bottom: 1px solid #E5E5E5;
+    padding: 25px 0;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .container{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    vertical-align: bottom;
+}
+
+
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+
+.menu-item{
+    margin-right: 115px;
+}
+
+.menu-item a{
+    white-space: nowrap;
+    font-size: 20px;
+    color: #030305;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+
+.menu-item a:hover{
+    border-bottom: 2px solid black;
+}
+
+.main{
+    background-image: url("../images/background.png");
+    background-position: center;
+    background-size: cover;
+    padding: 104px 0 154px 0;
+}
+
+
+.button {
+    white-space: nowrap;
+    padding: 20px;
+    width: 334px;
+    height: 64px;
+    background: #3A75AA;
+    border-radius: 10px;
+    border: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFFFF;
+    transition: background-color .5s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: #575757;
+}
