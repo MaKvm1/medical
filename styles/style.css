@@ -18,6 +18,12 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+.container-header {
+    background-color: #7BAAD0; 
+    background-position: center;
+    background-size: cover;
+    padding: 10px 0 10px 0;
+}
 .header{
     border-bottom: 1px solid #E5E5E5;
     padding: 25px 0;
