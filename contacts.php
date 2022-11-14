@@ -59,54 +59,9 @@
 
             </div>
         </header>
-        <section class="service">
-            <div class="conteiner">
-                <h2 class="sub-title"> Медицинский центр в Иркутске </h2>
-                <div class="carts">
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                </div>
-            </div>
+
+        <section class="price">
+            <h1 style="text-align: center; margin-top: 5%; margin-bottom: 5%;">Здесь что то должно быть</h1>
         </section>
         <footer class="footer">
             <div class="container">

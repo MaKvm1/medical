@@ -49,7 +49,7 @@
                             <a href="#">Отзывы</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">Контакты</a>
+                            <a href="contacts.php">Контакты</a>
                         </li>
                     </ul>
                 </nav>

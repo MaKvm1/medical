@@ -49,7 +49,7 @@
                             <a href="#">Отзывы</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#">Контакты</a>
+                            <a href="contacts.php">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -102,3 +102,13 @@
                 </div>
             </div>
         </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo">
+                </div>
+                <div class="rights">Все права защищены</div>
+            </div>
+        </footer>
+    </body>
+</html>
