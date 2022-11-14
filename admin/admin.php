@@ -1,5 +1,4 @@
 <!-- Страница авторизации пользователей системы -->
-
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
@@ -54,26 +53,18 @@
     </head>
     <body>
     <head>
-    <div class="login">
-    <div class="login-screen">
-      <div class="app-title">
-        <h1>Авторизация</h1>
-      </div>
-
-      <div class="login-form">
-        <div class="control-group">
-        <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
-        <label class="login-field-icon fui-user" for="login-name"></label>
+    <form method="post" action="login.php">
+        <div class="mb-3">
+          <label for="username" class="form-label">Логин</label>
+          <input type="text" class="form-control" id="login" name="login" required>
         </div>
-
-        <div class="control-group">
-        <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
-        <label class="login-field-icon fui-lock" for="login-pass"></label>
+        <div class="mb-3">
+          <label for="password" class="form-label">Пароль</label>
+          <input type="password" class="form-control" id="password" name="password" required>
         </div>
-
-        <a class="btn btn-primary btn-large btn-block" href="#">Вход</a>
-      </div>
-    </div>
-  </div>
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary">Войти</button>
+        </div>
+      </form>
     </head>
 </html>

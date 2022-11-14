@@ -1,5 +1,4 @@
 <!-- Страница регистрации пользователей -->
-
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
@@ -54,26 +53,18 @@
     </head>
     <body>
     <head>
-    <div class="login">
-    <div class="login-screen">
-      <div class="app-title">
-        <h1>Регистрация</h1>
-      </div>
-
-      <div class="login-form">
-        <div class="control-group">
-        <input type="text" class="login-field" value="" placeholder="Логин" id="login-name">
-        <label class="login-field-icon fui-user" for="login-name"></label>
-        </div>
-
-        <div class="control-group">
-        <input type="password" class="login-field" value="" placeholder="Пароль" id="login-pass">
-        <label class="login-field-icon fui-lock" for="login-pass"></label>
-        </div>
-
-        <a class="btn btn-primary btn-large btn-block" href="#">Вход</a>
-      </div>
-    </div>
-  </div>
+    <form method="post" action="register.php">
+            <div class="mb-3">
+              <label for="username" class="form-label">Логин</label>
+              <input type="text" class="form-control" id="login" name="login" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Пароль</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn btn-primary">Регистрация</button>
+            </div>
+          </form>
     </head>
 </html>
