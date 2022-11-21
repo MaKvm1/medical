@@ -1,7 +1,12 @@
 <?php 
 include_once __DIR__."/admin/db.php";
 
-$stmt = $dbh->prepare("SELECT * FROM `classification`");
+// если запрос GET
+if($_SERVER["REQUEST_METHOD"] === "GET" AND isset($_GET["id_class"]))
+{
+    $class = $_GET["id_class"];
+$stmt = $dbh->prepare("SELECT * FROM `services` JOIN classification ON services.id_classification = classification.id_class WHERE id_classification = :class");
+$stmt->bindValue(":class", $class);
 $stmt->execute();
 $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -12,11 +17,6 @@ $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Медицинский центр</title>
         <link rel="stylesheet" type="text/css" href="styles/style.css">
-        <style>
-            * {
-                text-decoration: none;
-            }
-        </style>
     </head>
     <body>
         <div class="container-header"> 
@@ -74,16 +74,22 @@ $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <section class="service">
             <div class="conteiner">
                 <h2 class="sub-title"> Медицинский центр в Иркутске </h2>
+                
+                <?php if(count($array) >0){?>
                 <div class="carts">
                 <?php  foreach ($array as $row): ?>
                     <div class="cart">
                         <div class="cart-image">
                             <img src="images/logo.png" alt="Image 1">
                         </div>
-                        <div class="cart-title"> <a href="service_class.php?id_class=<?= $row['id_class'] ?>"><?= $row['name_class'] ?> </a></div>
+                        <div class="cart-title"><?= $row['name_serv'] ?></div>
                     </div>
                     <?php endforeach; ?>
                 </div>
+                <?php } else{?>
+                    <hr>
+                    <h3> Услуг в данном направлении еще нет. </h3>
+                    <?php }?>
             </div>
         </section>
         <footer class="footer">
@@ -96,3 +102,5 @@ $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </footer>
     </body>
 </html>
+
+<?php } ?>

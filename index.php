@@ -1,3 +1,10 @@
+<?php 
+include_once __DIR__."/admin/db.php";
+
+$stmt = $dbh->prepare("SELECT * FROM `services` JOIN classification ON services.id_classification = classification.id_class");
+$stmt->execute();
+$array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
@@ -88,42 +95,14 @@
                 <h2 class="sub-title"> Медицинский центр в Иркутске </h2>
                 <p class="sub-text">Понимая, что ритм и уровень жизни активных и целеустремлённых людей меняется очень быстро, наши специалисты одни из первых в Иркутсе начали применять современные технологии в стоматологии.</p>
                 <div class="carts">
+                <?php  foreach ($array as $row): ?>
                     <div class="cart">
                         <div class="cart-image">
                             <img src="images/logo.png" alt="Image 1">
                         </div>
-                        <div class="cart-title">Название процедуры</div>
+                        <div class="cart-title"><?= $row['name_serv'] ?></div>
                     </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">Название процедуры</div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">Название процедуры</div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">Название процедуры</div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">Название процедуры</div>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">Название процедуры</div>
-                    </div>
+                <?php endforeach; ?>
                 </div>
             </div>
         </section>

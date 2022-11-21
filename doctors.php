@@ -1,3 +1,10 @@
+<?php 
+include_once __DIR__."/admin/db.php";
+
+$stmt = $dbh->prepare("SELECT * FROM `users` WHERE id_post = 2");
+$stmt->execute();
+$array = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
@@ -63,48 +70,24 @@
             <div class="conteiner">
                 <h2 class="sub-title"> Медицинский центр в Иркутске </h2>
                 <div class="carts">
+                <?php  foreach ($array as $row): ?>
                     <div class="cart">
                         <div class="cart-image">
                             <img src="images/logo.png" alt="Image 1">
                         </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
+                        <div class="cart-title"><?= $row['full_name'] ?></div>
+                        <?php 
+                        $users = $row['id'];
+                        $stmt = $dbh->prepare("SELECT * FROM `work_services` JOIN services ON work_services.id_services = services.id_serv WHERE id_work = :users");
+                        $stmt->bindValue(":users", $users);
+                        $stmt->execute();
+                        $arrays = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        ?>
+                        <?php  foreach ($arrays as $rows): ?>
+                        <p> Услуги: <?= $rows['name_serv'] ?> </p>
+                        <?php endforeach; ?> 
                     </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
-                    <div class="cart">
-                        <div class="cart-image">
-                            <img src="images/logo.png" alt="Image 1">
-                        </div>
-                        <div class="cart-title">ФИО врача</div>
-                        <p> Профиль </p>
-                    </div>
+                <?php endforeach; ?>    
                 </div>
             </div>
         </section>
